@@ -1,4 +1,5 @@
 <?php include("../../path.php"); ?>
+<?php include(ROOT_PATH ."/app/controller/reciept.php");?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,8 +16,8 @@
   </head>
   <body>
   <?php include(ROOT_PATH . "/app/includes/staffheader.php"); ?>
-      <main class="mt-2 mx-6">
-
+  <main class="mt-2 mx-6">
+      <form action="edit.php" method='post'>
         <div class="col-lg-7 offset-md-2">
             <span class="anchor" id="formUserEdit"></span>
             <hr class="my-5">
@@ -24,41 +25,46 @@
             <!-- form user info -->
             <div class="card card-outline-secondary text-right ml-5">
                 <div class="card-header">
-                    <h3 class="mb-0">Edit Reciept</h3>
+                    <h3 class="mb-0">Update Reciept</h3>
                 </div>
                 <div class="card-body">
                     <form class="form" role="form" autocomplete="off">
+                    <div class="form-group row">
+                              <div class="col-lg-9">
+                                  <input class="form-control" name='id' type="hidden" value="<?php echo $id; ?>">
+                              </div>
+                          </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Vehicle name</label>
                             <div class="col-lg-9">
-                                <input class="form-control" type="text" value="">
+                                <input class="form-control" type="text" name='vehicle_name' value="<?php echo $vehicle_name; ?>">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Vehicle number</label>
                             <div class="col-lg-9">
-                                <input class="form-control" type="number" value="">
+                                <input class="form-control" name='vehicle_reg_num' type="number" value="<?php echo $vehicle_reg_num; ?>">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Owner Name</label>
                             <div class="col-lg-9">
-                                <input class="form-control" type="text" value="">
+                                <input class="form-control" name='owner_name' type="text" value="<?php echo $owner_name; ?>">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Age of applicant</label>
                             <div class="col-lg-9">
-                                <input class="form-control" type="number" value="">
+                                <input class="form-control" name='age_of_applicant' type="number" value="<?php echo $age_of_applicant; ?>">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">City</label>
                             <div class="col-lg-9">
-                                <input class="form-control" type="text" value="">
+                                <input class="form-control" name='city' type="text" value="<?php echo $city; ?>">
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Vehicle category</label>
                             <div class="col-lg-9">
                                 <select id="category" class="form-control" size="0">
@@ -68,11 +74,11 @@
                                     <option value="Corola">Corola</option>
                                 </select>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Gender</label>
                             <div class="col-lg-9">
-                                <select id="sex" class="form-control" size="0">
+                                <select id="sex" name='gender' class="form-control" size="0" value='<?php echo $gender; ?>'>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
                                 </select>
@@ -81,7 +87,7 @@
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Trip type</label>
                             <div class="col-lg-9">
-                                <select id="sex" class="form-control" size="0">
+                                <select id="trip" name='trip_type' class="form-control" size="0" value='<?php echo $trip_type; ?>'>
                                     <option value="One-way">One-way</option>
                                     <option value="Two-way">Two-way</option>
                                 </select>
@@ -90,7 +96,7 @@
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Cost</label>
                             <div class="col-lg-9">
-                                <input class="form-control" type="number" value="">
+                                <input class="form-control" name='cost' type="number" value="<?php echo $cost; ?>">
                             </div>
                         </div>
 
@@ -98,8 +104,8 @@
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label"></label>
                             <div class="col-lg-9">
-                                <input type="reset" class="btn btn-secondary" value="Cancel">
-                                <input type="button" class="btn btn-primary" value="Save Changes">
+                                <!-- <input type="reset" class="btn btn-secondary" value="Cancel"> -->
+                                <input type="submit"name='update-reciept' class="btn btn-primary" value="Save Changes">
                             </div>
                         </div>
                     </form>
@@ -108,6 +114,7 @@
             <!-- /form user info -->
 
         </div>
+        </form>
     </main>
 
       <!-- Optional JavaScript -->

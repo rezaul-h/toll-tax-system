@@ -1,4 +1,5 @@
 <?php include("../../path.php"); ?>
+<?php include(ROOT_PATH ."/app/controller/reciept.php");?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,9 +18,7 @@
   <?php include(ROOT_PATH . "/app/includes/staffheader.php"); ?>
       <!-- offcanvar-->
       <main class="mt-2 mx-7 ">
-        <div class="card-header">
-            <h3 class="mb-0">Pass Sold</h3>
-        </div>
+    
         <div class="card-header">
             <h3 class="mb-0">Reciept Details</h3>
         </div>
@@ -36,18 +35,20 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">3</th>
-        <td>1</td>
-        <td>Otto</td>
-        <td>11</td>
-        <td>1/1/1998</td>
-        <td>
-            <a href="<?php echo BASE_URL . "/Staff/reciept/edit.php"; ?>" class="btn btn-primary"><i class="far fa-eye"></i></a>
-            <a href=" <?php echo BASE_URL . "/Staff/reciept/edit.php"; ?>" class="btn btn-success"><i class="fas fa-edit"></i></a>
-            <a href="<?php echo BASE_URL . "/Staff/reciept/edit.php"; ?>" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
-        </td>
-      </tr>
+    <?php foreach ($reciepts as $key => $reciept): ?>
+          <tr>
+          <th scope="row"><?php echo $key +1; ?></th>
+          <td><?php echo $reciept['id']; ?></td>
+          <td><?php echo $reciept['owner_name']; ?></td>
+          <td><?php echo $reciept['vehicle_reg_num']; ?></td>
+          <td><?php echo $reciept['created_at']; ?></td>
+            <td>
+              <a href="<?php echo BASE_URL . "/Staff/reciept/edit.php"; ?>" class="btn btn-primary"><i class="far fa-eye"></i></a>
+              <a href="edit.php?id=<?php echo $reciept['id']; ?>" class="btn btn-success"><i class="fas fa-edit"></i></a>
+            <a href="details.php?del_id=<?php echo $reciept['id']; ?>" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+            </td>
+          </tr>
+          <?php endforeach; ?>
     </tbody>
   </table>
 </main>

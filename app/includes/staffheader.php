@@ -69,7 +69,7 @@
                         <span class="me-2">
                             <i class="fas fa-ticket"></i>
                         </span>
-                        <span>Pass</span>
+                        <span>Receipt</span>
                         <span style="float: right;"><i class="far fa-sort-down"></i></span>
                       </a>
                       <div class="collapse" id="collapseExample">
