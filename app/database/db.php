@@ -135,6 +135,4 @@ function delete($table, $id)
 
 // // $id = delete('users', 12);
 // dd($id);
-
-
 ?>

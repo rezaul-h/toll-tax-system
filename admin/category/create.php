@@ -25,6 +25,7 @@
       <!-- offcanvar-->
 
       <main class="mt-2 mx-6">
+     
 
         <form action="create.php" method='post'>
           <div class="col-lg-7 offset-md-2">
@@ -36,12 +37,27 @@
                   <div class="card-header">
                       <h3 class="mb-2 py-2 fw-bold text-center">Vehicle Category</h3>
                   </div>
+                  <?php if(count($errors)>0): ?>
+   <div class="form-row">
+    <div class="col-lg-7">
+  <?php foreach($errors as $error):  ?>
+
+   <li class="msg error" style="border: 1px solid; margin: 10px 0px;padding: 15px 10px 15px 50px;background-repeat: no-repeat; background-position: 10px center;color: #D8000C;background-color: #FFBABA;background-image: url('https://i.imgur.com/GnyDvKN.png'); display: inline-block; width: 100%;">
+      <?php echo $error; ?>
+    </li>
+   <?php endforeach; ?>
+      </div>
+    </div>
+ <?php endif; ?>
+
+                  
+
                   <div class="card-body">
                       <form class="form" role="form" autocomplete="off">
                           <div class="form-group row">
                               <label class="col-lg-3 col-form-label form-control-label">Vehicle name</label>
                               <div class="col-lg-9">
-                                  <input type="text" name='name' class="form-control"  value="">
+                                  <input type="text" name='name' value="<?php echo $name; ?>" class="form-control" >
                               </div>
                           </div>
 

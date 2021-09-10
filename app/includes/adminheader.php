@@ -10,7 +10,7 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="container-fluid">
+          <!-- <div class="container-fluid">
             <form class="d-flex ms-auto">
                 <div class=" container-fluid input-group mb-1 form-group col-lg-4 my-3 my-lg-0">
                     <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
@@ -19,18 +19,21 @@
                     </button>
                   </div>
             </form>
-        </div>
-             <div class="dropdown">
+        </div> -->
+        <?php if(isset($_SESSION['id'])): ?>
+        <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user"><?php echo $_SESSION['username'] ?></i>
+
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="#">settings</a></li>
                 <li><a class="dropdown-item" href="#">profile</a></li>
-                <li><a class="dropdown-item" href="#">logout</a></li>
+                <li><a class="dropdown-item" href="<?php echo BASE_URL . '/logout.php'?>">logout</a></li>
                 </ul>
              </div>
-
+        <?php endif; ?>
+            
                 
 
             
@@ -45,16 +48,39 @@
         <div class="offcanvas-body p-0">
           <nav class="navbar-dark">
             <ul class="navbar-nav">
-                <li>
-                    <div class="text-muted small fw-bold text-uppercase px-3">admin name</div>
+            <li>
+                    <div class="text-muted small fw-bold text-uppercase px-3">Search pass and reciepts</div>
                 </li>
                 <li>
-                    <a href=" <?php echo BASE_URL . "/admin/dashboard/dashboard.php"; ?>" class="nav-link px-3 active">
+                    <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         <span class="me-2">
-                            <i class="fas fa-tachometer"></i>
+                            <i class="far fa-user-circle"></i>
                         </span>
-                        <span>Dashboard</span>
-                    </a>
+                        <span>Search</span>
+                        <span style="float: right;"><i class="far fa-sort-down"></i></span>
+                      </a>
+                      <div class="collapse" id="collapseExample">
+                        <div class="">
+                        <ul class="navbar-nav ps-5">
+                            <li>
+                                <a href=" <?php echo BASE_URL . "/admin/search/search.php"; ?>" class="nav-link">
+                                    <span class="me-2">
+                                        <i class="fas fa-user-plus"></i>
+                                    </span>
+                                    <span>Search Pass</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<?php echo BASE_URL . "/admin/search/searchReciept.php"; ?>" class="nav-link">
+                                    <span class="me-2">
+                                        <i class="fas fa-user-edit"></i>
+                                    </span>
+                                    <span>Search Receipt</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                        </div>
                 </li>
                 <li class="my-4">
                     <hr class="dropdown-divider">
@@ -218,6 +244,17 @@
                 </li>
                 <li class="my-4">
                     <hr class="dropdown-divider">
+                </li>
+                <li>
+                    <div class="text-muted small fw-bold text-uppercase px-3">Details of Reciepts</div>
+                </li>
+                <li>
+                    <a href=" <?php echo BASE_URL . "/admin/reciept/details.php"; ?>" class="nav-link px-3 active">
+                        <span class="me-2">
+                            <i class="fas fa-tachometer"></i>
+                        </span>
+                        <span>Reciepts</span>
+                    </a>
                 </li>
             </ul>
           </nav>

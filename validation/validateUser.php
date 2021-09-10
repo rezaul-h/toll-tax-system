@@ -40,5 +40,20 @@ function validateLogin($user){
     return $errors;
    
 }
+function validateChangePassword($user){
+    
+    $errors = array();
+    if(empty($user['password'])){
+        array_push($errors, 'password is required');
+    }
+    
+    if($user['password']!== $user['c_pass'] ){
+        array_push($errors, 'password does not match');
+    }
+    
+    return $errors;
+   
+}
+
 
 ?>

@@ -42,7 +42,7 @@
           <td><?php echo $pass['name_of_applicant']; ?></td>
           <td><?php echo $pass['created_at']; ?></td>
             <td>
-              <a href="<?php echo BASE_URL . "/admin/pass/edit.php"; ?>" class="btn btn-primary"><i class="far fa-eye"></i></a>
+             
               <a href="edit.php?id=<?php echo $pass['id']; ?>" class="btn btn-success"><i class="fas fa-edit"></i></a>
             <a href="details.php?del_id=<?php echo $pass['id']; ?>" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
             </td>

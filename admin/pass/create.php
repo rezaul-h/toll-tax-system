@@ -25,76 +25,81 @@
         <div class="col-lg-7 offset-md-2">
             <span class="anchor" id="formUserEdit"></span>
             <hr class="my-5">
+            
 
             <!-- form user info -->
             <div class="card card-outline-secondary text-right ml-5">
                 <div class="card-header">
                     <h3 class="mb-0">Pass Information</h3>
                 </div>
+                <?php if(count($errors)>0): ?>
+   <div class="form-row">
+    <div class="col-lg-7">
+  <?php foreach($errors as $error):  ?>
+
+   <li class="msg error" style="border: 1px solid; margin: 10px 0px;padding: 15px 10px 15px 50px;background-repeat: no-repeat; background-position: 10px center;color: #D8000C;background-color: #FFBABA;background-image: url('https://i.imgur.com/GnyDvKN.png'); display: inline-block; width: 100%;">
+      <?php echo $error; ?>
+    </li>
+   <?php endforeach; ?>
+      </div>
+    </div>
+ <?php endif; ?>
+             
                 <div class="card-body">
                     <form class="form" role="form" autocomplete="off">
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Vehicle name</label>
                             <div class="col-lg-9">
-                                <input class="form-control" name='vehicle_name' type="text">
+                                <input class="form-control" name='vehicle_name' value="<?php echo $vehicle_name; ?>" type="text">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">register number</label>
                             <div class="col-lg-9">
-                                <input class="form-control" name = 'vehicle_reg_num' type="number" >
+                                <input class="form-control" name = 'vehicle_reg_num' value="<?php echo $vehicle_name; ?>"  type="number" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Name of applicant</label>
                             <div class="col-lg-9">
-                                <input class="form-control" name='name_of_applicant' type="text" >
+                                <input class="form-control" name='name_of_applicant' value="<?php echo $vehicle_name; ?>" type="text" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Age of applicant</label>
                             <div class="col-lg-9">
-                                <input class="form-control" name='age_of_applicant' type="number" >
+                                <input class="form-control" name='age_of_applicant' value="<?php echo $vehicle_name; ?>" type="number" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Address</label>
                             <div class="col-lg-9">
-                                <input class="form-control" name='address' type="text">
+                                <input class="form-control" name='address' value="<?php echo $vehicle_name; ?>"  type="text">
                             </div>
                         </div>
-                        <!-- <div class="form-group row">
+                        <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Vehicle category</label>
                             <div class="col-lg-9">
-                                <select id="category" class="form-control" size="0">
-                                    <option value="Ferari">Ferari</option>
-                                    <option value="Nissan">Nissan</option>
-                                    <option value="Madza">Madza</option>
-                                    <option value="Corola">Corola</option>
-                                    <option value="Bmw">BMW</option>
+                                <select id="category" name='category_id'  class="form-control" size="0">
+                                   
+                                <?php foreach ($topics as $key => $topic): ?>
+                                    <option value="<?php echo $topic['id']?>"><?php echo $topic['name']?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
-                        </div> -->
-                        <!-- <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label">Gender</label>
-                            <div class="col-lg-9">
-                                <select id="sex" class="form-control" size="0">
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-                            </div>
-                        </div> -->
+                        </div>
+
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Cost</label>
                             <div class="col-lg-9">
-                                <input class="form-control" name='cost' type="number">
+                                <input class="form-control" name='cost' value="<?php echo $vehicle_name; ?>"  type="number">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Validity from</label>
                             <div class="col-lg-9">
-                                <input class="form-control" type="date" name="val_from" 
-                                placeholder="dd-mm-yyyy" 
+                                <input class="form-control" type="date"  name="val_from" value="<?php echo $val_from; ?>" 
+                               
                                 min="1997-01-01" max="2030-12-31">
                                
                             </div>
@@ -102,8 +107,8 @@
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Validity to</label>
                             <div class="col-lg-9">
-                                <input class="form-control" type="date" name="val_to" 
-                                placeholder="dd-mm-yyyy" 
+                                <input class="form-control" type="date" name="val_to"  value="<?php echo $val_to; ?>"
+                             
                                 min="1997-01-01" max="2030-12-31">
                                
                             </div>

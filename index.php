@@ -1,6 +1,6 @@
 <?php 
 include("path.php");
-include(ROOT_PATH . "/app/database/db.php");
+include(ROOT_PATH ."/app/controller/category.php");
 ?>
 
 
@@ -14,6 +14,7 @@ include(ROOT_PATH . "/app/database/db.php");
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="<?php echo BASE_URL . "/assets/css/bootstrap.min.css"?>">
     <link rel="stylesheet" href="<?php echo BASE_URL . "/assets/css/style.css"?>">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet">
@@ -32,7 +33,10 @@ include(ROOT_PATH . "/app/database/db.php");
 				<div class="col-md-7 text-center">
 					<h2 class="mt-4">Automated Toll Tax System</h2>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus maxime neque nulla aliquid, culpa aliquam facere rem. Consequatur, veniam vitae.</p>
-					<button type="button" class="btn btn-outline-warning btn-large">Signin</button>
+					<a href="<?php echo BASE_URL . "/Staff/dashboard/dashboard.php"?>">
+					<button type="button" class="btn btn-outline-warning btn-large">Dashboard</button>
+					</a>
+					
 				</div>
 				<div class="col-md-5 px-4">
 					<img src="<?php echo BASE_URL . "/assets/images/headerimg.jpg"?>" alt="" class="img-responsive fit-image">
@@ -47,7 +51,8 @@ include(ROOT_PATH . "/app/database/db.php");
 		<div class="container text-center">
 			<div class="row g-5 py-4 justify-content-center">
 				<div class="col-md-2 px-2">
-					<a class="btn btn-warning" href="<?php echo BASE_URL . "/admin/dashboard/dashboard.php"?>"> <span class="fas fa-chart-line fa-5x pb-3"> </span >
+					<a class="btn btn-warning" href="<?php echo BASE_URL . "/Staff/dashboard/dashboard.php"?>"> 
+					<i class="fas fa-chart-line fa-5x pb-3"> </i>
                                 <h3>Dashboard</h3>
                                 </a>
                             </div>
@@ -55,21 +60,21 @@ include(ROOT_PATH . "/app/database/db.php");
                                 <div class="col-md-2 px-2">
                                     <a href="<?php echo BASE_URL . "/Staff/reciept/create.php"?>" class="btn btn-success">
                                     <span class="fas fa-file-invoice fa-5x pb-3"></span>
-						<h3>Reciept</h3>
+						<h3>Add Reciept</h3>
 					</a>
 				</div>
 				<div class="col-md-2 px-2">
-					<a href="" class="btn btn-info"> <span class="fas fa-user fa-5x pb-3"></span>
+					<a href="<?php echo BASE_URL . "/Staff/reciept/details.php"?>" class="btn btn-info"> <span class="fas fa-user fa-5x pb-3"></span>
+						<h3>View Reciepts</h3>
+					</a>
+				</div>
+				<div class="col-md-2 px-2">
+					<a href="<?php echo BASE_URL . "/Staff/profile/profile.php"?>" class="btn btn-dark"> <span class="fas fa-cogs fa-5x pb-3"></span>
 						<h3>Profile</h3>
 					</a>
 				</div>
 				<div class="col-md-2 px-2">
-					<a href="" class="btn btn-dark"> <span class="fas fa-cogs fa-5x pb-3"></span>
-						<h3>Settings</h3>
-					</a>
-				</div>
-				<div class="col-md-2 px-2">
-					<a href="" class="btn btn-primary"> <span class="fab fa-searchengin fa-5x pb-3"></span>
+					<a href="<?php echo BASE_URL . "/Staff/reciept/search.php"?>" class="btn btn-primary"> <span class="fab fa-searchengin fa-5x pb-3"></span>
 						<h3>Search</h3>
 					</a>
 				</div>
@@ -124,56 +129,19 @@ include(ROOT_PATH . "/app/database/db.php");
                         <span class="comment"><i class="fa fa-comment"></i> 10 comments</span>
                     </div><!-- .Sidebar-meta ends here -->
                 </li><!-- .Li ends here -->
-                <li>
-                    <div class="sidebar-thumb">
-                        <img class="animated rollIn" src="http://shop.spotlayer.com/demo/soft-mag/demo1/wp-content/uploads/8S64npOgTu2eWTZIXEfy_DSC_0955-90x75.jpg" alt="" />
-                    </div><!-- .Sidebar-thumb -->
-                    <div class="sidebar-content">
-                        <h5 class="animated bounceInRight"><a href="#">Watch Now: How to Manipulate the Media</a></h5>
-                    </div><!-- .Sidebar-thumb -->
-                    	<div class="sidebar-meta">
-                        <span class="time" ><i class="fa fa-clock-o"></i> Aug 27, 2015</span>
-                        <span class="comment"><i class="fa fa-comment"></i> 10 comments</span>
-                    </div><!-- .Sidebar-meta ends here -->
-                </li><!-- .Li ends here -->
-                <li>
-                    <div class="sidebar-thumb">
-                        <img class="animated rollIn" src="http://shop.spotlayer.com/demo/soft-mag/demo1/wp-content/uploads/17153174816_a808becb66_o-90x75.jpg" alt="" />
-                    </div><!-- .Sidebar-thumb -->
-                    <div class="sidebar-content">
-                        <h5 class="animated bounceInRight"><a href="#">OnePlus Inks First Carrier Partnership with Malaysia</a></h5>
-                    </div><!-- .Sidebar-thumb -->
-                    <div class="sidebar-meta">
-                        <span class="time" ><i class="fa fa-clock-o"></i> Aug 27, 2015</span>
-                        <span class="comment"><i class="fa fa-comment"></i> 10 comments</span>
-                    </div><!-- .Sidebar-meta ends here -->
-                </li><!-- .Li ends here -->
-                <li>
-                    <div class="sidebar-thumb">
-                        <img class="animated rollIn" src="http://shop.spotlayer.com/demo/soft-mag/demo1/wp-content/uploads/16986542958_6a9303388c_o-90x75.jpg" alt="" />
-                    </div><!-- .Sidebar-thumb -->
-                    <div class="sidebar-content">
-                        <h5 class="animated bounceInRight"><a href="#">Heaps Wants to Enhance How Groups of Friends</a></h5>
-                    </div><!-- .Sidebar-thumb -->
-                    <div class="sidebar-meta">
-                        <span class="time" ><i class="fa fa-clock-o"></i> Aug 27, 2015</span>
-                        <span class="comment"><i class="fa fa-comment"></i> 10 comments</span>
-                    </div><!-- .Sidebar-meta ends here -->
-                </li><!-- .Li ends here -->
+                
               </ul><!-- .Ul ends here -->
           </div><!-- .Widget ends here -->
       </div><!-- .Col ends here -->
     <div class="col-md-4">
 	<div class="section topics">
-          <h2 class="section-title">Topics</h2>
-          <ul>
-            <li><a href="#">Poems</a></li>
-            <li><a href="#">Quotes</a></li>
-            <li><a href="#">Fiction</a></li>
-            <li><a href="#">Biography</a></li>
-            <li><a href="#">Motivation</a></li>
-            <li><a href="#">Inspiration</a></li>
-            <li><a href="#">Life Lessons</a></li>
+          <h2 class="section-title">Vehicle Category</h2>
+          <ul class="list-group">
+
+	  <?php foreach ($topics as $key => $topic): ?>
+		<li class="list-group-item disabled"><a class='btn' href="#"><?php echo $topic['name'] ?></a></li>
+	  <?php endforeach; ?>
+
           </ul>
         </div>
 	</div><!-- .Col ends here -->

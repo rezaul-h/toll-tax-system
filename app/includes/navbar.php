@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 		<div class="container">
-			<a class="navbar-brand" href="#">
+			<a class="navbar-brand"href="<?php echo BASE_URL . "/index.php"?>">
 				<img src="assets/images/logo.jpg" alt="" width="5%">
 			</a>
 		</div>
@@ -11,9 +11,6 @@
 				<li class="nav-item active"> <a class="nav-link" href="<?php echo BASE_URL . "/index.php"?>">Home</a>
 				</li>
 				<li class="nav-item"> <a class="nav-link" href="<?php echo BASE_URL . "/signin.php"?>">Admin</a>
-				</li>
-				<li class="nav-item"> <a class="nav-link" href="<?php echo BASE_URL . "/signin.php"?>">Staff</a>
-				</li>
 				<li class="nav-item"> <a class="nav-link" href="<?php echo BASE_URL . "/contactus.php"?>">Contact us</a>
 				</li>
 				<?php if(isset($_SESSION['id'])): ?>

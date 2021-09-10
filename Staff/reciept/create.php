@@ -59,17 +59,17 @@
                                 <input class="form-control" name='city' type="text" value="">
                             </div>
                         </div>
-                        <!-- <div class="form-group row">
+                        <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Vehicle category</label>
                             <div class="col-lg-9">
-                                <select id="category" class="form-control" size="0">
-                                    <option value="Ferari">Ferari</option>
-                                    <option value="Nissan">Nissan</option>
-                                    <option value="Madza">Madza</option>
-                                    <option value="Corola">Corola</option>
+                                <select id="category" name='category_id' class="form-control" size="0">
+                                   
+                                <?php foreach ($topics as $key => $topic): ?>
+                                    <option value="<?php echo $topic['id']?>"><?php echo $topic['name']?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
-                        </div> -->
+                        </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Gender</label>
                             <div class="col-lg-9">

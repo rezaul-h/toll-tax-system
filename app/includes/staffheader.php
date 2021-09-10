@@ -20,15 +20,16 @@
                     </button>
                   </div>
             </form>
+            
         </div>
              <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fas fa-user"></i>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="<?php echo BASE_URL . '/Staff/profile/profile.php'?>">Profile</a></li>
                     <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                    <li><a class="dropdown-item" href="<?php echo BASE_URL . '/logout.php'?>">Logout</a></li>
                 </ul>
              </div>
 
@@ -47,14 +48,14 @@
           <nav class="navbar-dark">
             <ul class="navbar-nav">
                 <li>
-                    <div class="text-muted small fw-bold text-uppercase px-3">Staff Name</div>
+                    <div class="text-muted small fw-bold text-uppercase px-3 py-3"> Search Recipts</div>
                 </li>
                 <li>
-                    <a href="<?php echo BASE_URL . "/Staff/dashboard/dashboard.php"; ?>" class="nav-link px-3 active">
+                    <a href="<?php echo BASE_URL . "/Staff/reciept/search.php"; ?>" class="nav-link px-3 active">
                         <span class="me-2">
                             <i class="fas fa-tachometer"></i>
                         </span>
-                        <span>Dashboard</span>
+                        <span>Search</span>
                     </a>
                 </li>
                 <li class="my-4">

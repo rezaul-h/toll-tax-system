@@ -1,4 +1,5 @@
 <?php include("../../path.php"); ?>
+<?php include(ROOT_PATH ."/app/controller/users.php");?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,37 +19,45 @@
       <?php include(ROOT_PATH . "/app/includes/adminheader.php"); ?>
       <!-- offcanvar-->
         <main class="mt-2 mx-7 ">
+            
             <div class="card-header">
-                <h3 class="mb-0">Pass Sold</h3>
+                <h3 class="mb-0 mt-4">Staff Details</h3>
             </div>
-            <div class="card-header">
-                <h3 class="mb-0">Staff Enrolled</h3>
-            </div>
+
       
       <table class="table table-striped">
         <thead>
           <tr style=>
             <th scope="col">S.No</th>
-            <th scope="col">Staff id</th>
-            <th scope="col">Staff Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
          
-          <tr>
-            <th scope="row">3</th>
-            <td>1</td>
-            <td>Otto</td>
-            <td>
-              <a href="<?php echo BASE_URL . "/admin/staff/edit.php"; ?>" class="btn btn-primary"><i class="far fa-eye"></i></a>
-              <a href="<?php echo BASE_URL . "/admin/staff/edit.php"; ?>" class="btn btn-success"><i class="fas fa-edit"></i></a>
-            <a href="<?php echo BASE_URL . "/admin/staff/edit.php"; ?>" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
-            </td>
-          </tr>
+        <?php foreach ($admin_users as $key => $admin): ?>
+    
+    <tr>
+      <th scope="row"><?php echo $key +1; ?></th>
+
+      
+      <td><?php echo $admin['username']; ?></td>
+      <td><?php echo $admin['email']; ?></td>
+      <td>
+        
+        <a href="edit.php?id=<?php echo $admin['id']; ?>" class="btn btn-success"><i class="fas fa-edit"></i></a>
+      <a href="details.php?del_id=<?php echo $admin['id']; ?>" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+      </td>
+    </tr>
+
+    <?php endforeach; ?>
+
         </tbody>
       </table>
     </main>
+
+
       <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="../../assets/js/jquery.min.js"></script>

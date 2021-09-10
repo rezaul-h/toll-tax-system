@@ -1,5 +1,5 @@
 <?php include("../../path.php"); ?>
-<?php include(ROOT_PATH ."/app/controller/category.php");?>
+<?php include(ROOT_PATH ."/app/controller/reciept.php");?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -16,45 +16,38 @@
   </head>
   <body>
   <?php include(ROOT_PATH . "/app/includes/adminheader.php"); ?>
-<main class="mt-2 mx-7 ">
-            <div class="card-header">
-                <h3 class="mb-0 mt-4">Category Details</h3>
-            </div>
-            <?php include(ROOT_PATH . "/validation/formErrors.php");?>
-      
-      <table class="table table-striped">
-        <thead>
-       
-
-          <tr style=>
-            <th scope="col">S.No</th>
-            <th scope="col">Vehicle Name</th>
-            <th scope="col">Date of Creation</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-
-        <?php foreach ($topics as $key => $topic): ?>
+      <!-- offcanvar-->
+      <main class="mt-2 mx-7 ">
     
+        <div class="card-header">
+            <h3 class="mb-0 mt-4">Reciept Details</h3>
+        </div>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr style=>
+        <th scope="col">S.No</th>
+        <th scope="col">Reciept id</th>
+        <th scope="col">Name of Owner</th>
+        <th scope="col">Vehicle Number</th>
+        <th scope="col">date of creation</th>
+      </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($reciepts as $key => $reciept): ?>
           <tr>
-            <th scope="row"><?php echo $key +1; ?></th>
-
-            <td><?php echo $topic['name']; ?></td>
-            <td><?php echo $topic['created_at']; ?></td>
-            <td>
-
-              <a href="edit.php?id=<?php echo $topic['id']; ?>" class="btn btn-success"><i class="fas fa-edit"></i></a>
-            <a href="details.php?del_id=<?php echo $topic['id']; ?>" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
-            </td>
+          <th scope="row"><?php echo $key +1; ?></th>
+          <td><?php echo $reciept['id']; ?></td>
+          <td><?php echo $reciept['owner_name']; ?></td>
+          <td><?php echo $reciept['vehicle_reg_num']; ?></td>
+          <td><?php echo $reciept['created_at']; ?></td>
           </tr>
-
           <?php endforeach; ?>
+    </tbody>
+  </table>
+</main>
 
-        </tbody>
-      </table>
-    </main>
-      <!-- Optional JavaScript -->
+    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/js/popper.min.js"></script>

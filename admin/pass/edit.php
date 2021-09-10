@@ -21,16 +21,32 @@
       <?php include(ROOT_PATH . "/app/includes/adminheader.php"); ?>
       <!-- offcanvar-->
       <main class="mt-2 mx-6">
+
       <form action="edit.php" method='post'>
         <div class="col-lg-7 offset-md-2">
             <span class="anchor" id="formUserEdit"></span>
             <hr class="my-5">
-
+            
             <!-- form user info -->
             <div class="card card-outline-secondary text-right ml-5">
                 <div class="card-header">
                     <h3 class="mb-0">Pass Update</h3>
                 </div>
+               
+                <div class="form-row">
+    <div class="col-lg-7">
+    <?php if(count($errors)>0): ?>
+   <div class="form-row">
+    <div class="col-lg-7">
+  <?php foreach($errors as $error):  ?>
+
+   <li class="msg error" style="border: 1px solid; margin: 10px 0px;padding: 15px 10px 15px 50px;background-repeat: no-repeat; background-position: 10px center;color: #D8000C;background-color: #FFBABA;background-image: url('https://i.imgur.com/GnyDvKN.png'); display: inline-block; width: 100%;">
+      <?php echo $error; ?>
+    </li>
+   <?php endforeach; ?>
+      </div>
+    </div>
+ <?php endif; ?>
                 <div class="card-body">
                     <form class="form" role="form" autocomplete="off">
                     <div class="form-group row">
@@ -68,18 +84,17 @@
                                 <input class="form-control" name='address' type="text" value="<?php echo $address;?>">
                             </div>
                         </div>
-                        <!-- <div class="form-group row">
+                        <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Vehicle category</label>
                             <div class="col-lg-9">
-                                <select id="category" class="form-control" size="0">
-                                    <option value="Ferari">Ferari</option>
-                                    <option value="Nissan">Nissan</option>
-                                    <option value="Madza">Madza</option>
-                                    <option value="Corola">Corola</option>
-                                    <option value="Bmw">BMW</option>
+                                <select id="category" name='category_id' value="<?php echo $address;?>" class="form-control" size="0">
+                                   
+                                <?php foreach ($topics as $key => $topic): ?>
+                                    <option value="<?php echo $topic['id']?>"><?php echo $topic['name']?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
-                        </div> -->
+                        </div>
                         <!-- <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Gender</label>
                             <div class="col-lg-9">

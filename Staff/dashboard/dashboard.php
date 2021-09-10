@@ -17,6 +17,25 @@
   <?php include(ROOT_PATH . "/app/includes/staffheader.php"); ?>
       <!-- offcanvar-->
 
+<main class="mt-2 mx-6">
+      
+        <div class="col-lg-7 offset-md-2">
+            <span class="anchor" id="formUserEdit"></span>
+            <hr class="my-5">
+
+            <!-- form user info -->
+            <div class="card card-outline-secondary text-right ml-5">
+                <div class="card-header">
+                    <h3 class="mb-0 mt-4">Dashboard</h3>
+                </div>
+               
+            </div>
+            <!-- /form user info -->
+
+        </div>
+       
+    </main>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="../../assets/js/jquery.min.js"></script>

@@ -1,19 +1,25 @@
 <?php
 
 include(ROOT_PATH . "/app/database/db.php");
+include(ROOT_PATH . '/validation/validateTopic.php');
 
 $errors = array();
 $id = '';
 $name = '';
 $topics = selectAll('category');
 // dd($topics);
-
 if (isset($_POST['add-topic'])) {
-    unset($_POST['add-topic']);
-    $topic_id = create('category',$_POST);
-    header('location: ' .BASE_URL .'/admin/category/details.php');
-    exit();
+    // adminOnly();
+    $errors = validateTopic($_POST);
 
+    if (count($errors) === 0) {
+        unset($_POST['add-topic']);
+        $topic_id = create('category',$_POST);
+        header('location: ' .BASE_URL .'/admin/category/details.php');
+        exit(); 
+    } else {
+        $name = $_POST['name'];
+    }
 }
 
 if (isset($_GET['id'])) {
@@ -29,10 +35,18 @@ if (isset($_GET['del_id'])) {
     exit();
 }
 if (isset($_POST['update-topic'])) {
-    $id = $_POST['id'];
-    unset($_POST['update-topic'], $_POST['id']);
-    $topic_id = update('category', $id, $_POST);
-    header('location: ' . BASE_URL . '/admin/category/create.php');
+    $errors = validateTopic($_POST);
+    if (count($errors) === 0) {
+        $id = $_POST['id'];
+        unset($_POST['update-topic'], $_POST['id']);
+        $topic_id = update('category', $id, $_POST);
+        header('location: ' . BASE_URL . '/admin/category/create.php');
+    }
+    else{
+        $id = $_POST['id'];
+        $name = $_POST['name'];
+    }
+
 }
 
 

@@ -13,6 +13,7 @@ $cost='';
 $gender = '';
 $trip_type='';
 $reciepts = selectAll('reciept');
+$topics = selectAll('category');
 
 if (isset($_POST['create-reciept'])){
 

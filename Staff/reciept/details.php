@@ -20,7 +20,7 @@
       <main class="mt-2 mx-7 ">
     
         <div class="card-header">
-            <h3 class="mb-0">Reciept Details</h3>
+            <h3 class="mb-0 pt-3">Reciept Details</h3>
         </div>
   
   <table class="table table-striped">
@@ -43,7 +43,7 @@
           <td><?php echo $reciept['vehicle_reg_num']; ?></td>
           <td><?php echo $reciept['created_at']; ?></td>
             <td>
-              <a href="<?php echo BASE_URL . "/Staff/reciept/edit.php"; ?>" class="btn btn-primary"><i class="far fa-eye"></i></a>
+              
               <a href="edit.php?id=<?php echo $reciept['id']; ?>" class="btn btn-success"><i class="fas fa-edit"></i></a>
             <a href="details.php?del_id=<?php echo $reciept['id']; ?>" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
             </td>
